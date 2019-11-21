@@ -1,8 +1,8 @@
 
 {
 	"title":"Gregs Tagebuch Band 1 Von Idioten umzingelt!",
-	"authorId":
-	"categoryId":9,
+	"authorId":11,
+	"categoryId":19,
 	"isbn":9783833936586,
 	"fsk":10,
 	"publisher":"Baumhaus",
@@ -34,5 +34,4 @@
 	"lastName":"von Goethe",
 	"birthYear":1749
 }
-
 

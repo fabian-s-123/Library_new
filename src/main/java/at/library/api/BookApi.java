@@ -33,8 +33,8 @@ public class BookApi {
         return this.bookController.getBook(id);
     }
 
-    @PutMapping("/{id}")
-    public void updateBook(@RequestBody SBook book, @PathVariable int id){
-        this.bookController.updateBook(book, id);
+    @PutMapping
+    public void updateBook(@RequestBody SBook book){
+        this.bookController.updateBook(book);
     }
 }

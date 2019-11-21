@@ -1,6 +1,7 @@
 package at.library.controller;
 
 import at.library.entity.SBook;
+import at.library.entity.Utils;
 import at.library.repository.BookRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,19 @@ public class BookController {
         return this.bookRepository.findById(id);
     }
 
-    public void updateBook (SBook book, int id){
+    public SBook updateBook (SBook book){
+        String stringId = Integer.toString(book.getId());
+        if (book.getId() == null) {
+            return null;
+        }
+        SBook newBook = bookRepository.findById(book.getId()).get();
+        BeanUtils.copyProperties(book, newBook, Utils.getNullPropertyNames(book));
+        System.out.println("update successful");
+        return bookRepository.save(newBook);
+/*
         SBook currentBook = this.bookRepository.findById(id).get();
-       /* if(!(book.getTitle().length()==0)) currentBook.setTitle(book.getTitle());
-        if(book.getAuthorId()) currentBook.setAuthorId(book.getAuthorId());
+        if(!book.getTitle().isEmpty()) currentBook.setTitle(book.getTitle());
+        if(book.getAuthorId()==0) currentBook.setAuthorId(book.getAuthorId());
         if(book.getCategoryId()==0) currentBook.setCategoryId(book.getCategoryId());
         if(book.getFsk()==0) currentBook.setFsk(book.getFsk());
         if(book.getIsbn()==0) currentBook.setIsbn(book.getIsbn());
@@ -37,9 +47,8 @@ public class BookController {
         if(!book.getEdition().isEmpty()) currentBook.setEdition(book.getEdition());
         if(!book.getFirstEdition().isEmpty()) currentBook.setFirstEdition(book.getFirstEdition());
         if(book.getPages()==0) currentBook.setPages(book.getPages());
-        if(!book.getLanguage().isEmpty()) currentBook.setLanguage(book.getLanguage());*/
+        if(!book.getLanguage().isEmpty()) currentBook.setLanguage(book.getLanguage());
         BeanUtils.copyProperties(currentBook, book);
-        this.bookRepository.save(book);
-        System.out.println("update successful");
+        this.bookRepository.save(book);*/
     }
 }
