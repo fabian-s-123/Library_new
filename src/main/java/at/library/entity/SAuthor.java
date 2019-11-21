@@ -15,6 +15,9 @@ public class SAuthor {
     private String lastName;
     private int birthYear;
 
+    public SAuthor(){
+    }
+
     public SAuthor(String firstName, String lastName, int birthYear) {
         this.firstName = firstName;
         this.lastName = lastName;

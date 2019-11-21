@@ -1,10 +1,7 @@
 package at.library.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Timestamp;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class SCustomer {
@@ -16,7 +13,8 @@ public class SCustomer {
     private String email;
     private String firstName;
     private String lastName;
-    private Timestamp birthDay;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date birthDay;
     private String street;
     private String apNr;
     private int zip;
@@ -26,7 +24,10 @@ public class SCustomer {
     private int expiryDateYear;
     private int expiryDateMonth;
 
-    public SCustomer(String pinCode, String email, String firstName, String lastName, Timestamp birthDay, String street, String apNr, int zip, String city, long creditCardNr, int cvc, int expiryDateYear, int expiryDateMonth) {
+    public SCustomer (){
+    }
+
+    public SCustomer(String pinCode, String email, String firstName, String lastName, Date birthDay, String street, String apNr, int zip, String city, long creditCardNr, int cvc, int expiryDateYear, int expiryDateMonth) {
         this.pinCode = pinCode;
         this.email = email;
         this.firstName = firstName;
@@ -82,11 +83,11 @@ public class SCustomer {
         this.lastName = lastName;
     }
 
-    public Timestamp getBirthDay() {
+    public Date getBirthDay() {
         return birthDay;
     }
 
-    public void setBirthDay(Timestamp birthDay) {
+    public void setBirthDay(Date birthDay) {
         this.birthDay = birthDay;
     }
 

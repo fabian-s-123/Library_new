@@ -12,7 +12,7 @@ public class AuthorizationController {
     private CustomerRepository customerRepository;
 
     public SCustomer handleLogin(SCustomer customer){
-        SCustomer currentCustomer = (SCustomer)this.customerRepository.findById(customer.getId()).get();
+        SCustomer currentCustomer = customerRepository.findById(customer.getId()).get();
         if (currentCustomer.getPinCode().equals(customer.getPinCode())) {
             System.out.println("LOG IN SUCCESSFUL");
             return currentCustomer;

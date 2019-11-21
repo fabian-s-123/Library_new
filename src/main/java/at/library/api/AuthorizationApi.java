@@ -15,10 +15,8 @@ public class AuthorizationApi {
     @Autowired
     private AuthorizationController authorizationController;
 
-    @PostMapping("/customers/login")
+    @PostMapping
     public SCustomer login(@RequestBody SCustomer customer){
         return this.authorizationController.handleLogin(customer);
     }
-
-
 }

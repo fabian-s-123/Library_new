@@ -1,14 +1,38 @@
 
 {
-	"title":
+	"title":"Gregs Tagebuch Band 1 Von Idioten umzingelt!",
 	"authorId":
-	"categoryId":
-	"isbn":
-	"fsk":
-	"publisher":
-	"edition":
-	"firstEdition":
-	"pages":
-	"language":
+	"categoryId":9,
+	"isbn":9783833936586,
+	"fsk":10,
+	"publisher":"Baumhaus",
+	"edition":"2016",
+	"firstEdition":"2007",
+	"pages":224,
+    "language":"german"
 }
+    
+{
+    "pinCode":"abcdeg",
+    "firstName":"Ulrike",
+    "lastName":"Klaus",
+    "email":"ulrike_klaus@gmx.at",
+    "birthDay":"1973-02-27",
+    "street":"Rebhalde",
+    "apNr":"51",
+    "zip":
+    "city":"Röthis",
+    "creditCardNr":4568123587459658,
+    "cvc":547,
+    "expiryDateYear":"2020",
+    "expiryDateMonth":"12"
+}
+
+
+{
+	"firstName":"Johann Wolfgang",
+	"lastName":"von Goethe",
+	"birthYear":1749
+}
+
 

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class SBook {
@@ -11,16 +13,30 @@ public class SBook {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+/*    @NotNull*/
+    /*@Size(max = 50)*/
     private String title;
+/*    @Size(max = 2)*/
     private int authorId;
+/*    @Size(max = 2)*/
     private int categoryId;
+/*    @Size(max = 13)*/
     private long isbn;
+/*    @Size(max = 3)*/
     private int fsk;
+/*    @Size(max = 50)*/
     private String publisher;
+/*    @Size(max = 4)*/
     private String edition;
+/*    @Size(max = 4)*/
     private String firstEdition;
+/*    @Size(max = 4)*/
     private int pages;
+/*    @Size(max = 20)*/
     private String language;
+
+    public SBook(){
+    }
 
     public SBook(String title, int idAuthor, int categoryId, long isbn, int fsk, String publisher, String edition, String firstEdition, int pages, String language) {
         this.title = title;
