@@ -10,7 +10,7 @@ import java.util.Optional;
 @CrossOrigin
 @RestController
 @RequestMapping(path="/api/categories")
-public class ApiCategory {
+public class CategoryApi {
 
     @Autowired
     private CategoryController categoryController;
@@ -25,8 +25,13 @@ public class ApiCategory {
         return this.categoryController.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<SCategory> getCategory(@PathVariable int id){
+    @GetMapping(path="/{id}")
+    public Optional<SCategory> getCategory(@PathVariable  int id){
         return this.categoryController.getCategory(id);
+    }
+
+    @DeleteMapping
+    public void deleteCategory(SCategory category){
+        this.categoryController.deleteCategory(category);
     }
 }

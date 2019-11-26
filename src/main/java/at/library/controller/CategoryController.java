@@ -25,4 +25,8 @@ public class CategoryController {
     public Optional<SCategory> getCategory(int id){
         return this.categoryRepository.findById(id);
     }
+
+    public void deleteCategory(SCategory category){
+        this.categoryRepository.deleteById(category.getId());
+    }
 }

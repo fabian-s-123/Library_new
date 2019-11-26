@@ -28,7 +28,6 @@ public class BookController {
     }
 
     public SBook updateBook (SBook book){
-        String stringId = Integer.toString(book.getId());
         if (book.getId() == null) {
             return null;
         }
@@ -50,5 +49,9 @@ public class BookController {
         if(!book.getLanguage().isEmpty()) currentBook.setLanguage(book.getLanguage());
         BeanUtils.copyProperties(currentBook, book);
         this.bookRepository.save(book);*/
+    }
+
+    public void deleteBook(SBook book) {
+        this.bookRepository.deleteById(book.getId());
     }
 }

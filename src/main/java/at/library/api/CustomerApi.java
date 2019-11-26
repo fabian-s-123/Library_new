@@ -25,8 +25,13 @@ public class CustomerApi {
         return this.customerController.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<SCustomer> getBook(@PathVariable int id) {
+    @GetMapping(path="/{id}")
+    public Optional<SCustomer> getCustomer(@PathVariable  int id) {
         return this.customerController.getCustomer(id);
+    }
+
+    @DeleteMapping
+    public void deleteCustomers(@RequestBody SCustomer customer){
+        this.customerController.deleteCustomer(customer);
     }
 }

@@ -25,8 +25,13 @@ public class AuthorApi {
         return this.authorController.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<SAuthor> getAuthor(@PathVariable int id){
+    @GetMapping(path="/{id}")
+    public Optional<SAuthor> getAuthor(@PathVariable  int id){
         return this.authorController.getAuthor(id);
+    }
+
+    @DeleteMapping
+    public void deleteAuthor(SAuthor author){
+        this.authorController.deleteAuthor(author);
     }
 }

@@ -10,7 +10,7 @@ public class SAuthor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private int birthYear;
@@ -24,7 +24,7 @@ public class SAuthor {
         this.birthYear = birthYear;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

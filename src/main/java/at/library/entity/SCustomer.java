@@ -8,7 +8,7 @@ public class SCustomer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String pinCode;
     private String email;
     private String firstName;
@@ -43,7 +43,7 @@ public class SCustomer {
         this.expiryDateMonth = expiryDateMonth;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

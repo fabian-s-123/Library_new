@@ -24,4 +24,8 @@ public class AuthorController {
     public Optional<SAuthor> getAuthor(int id){
         return this.authorRepository.findById(id);
     }
+
+    public void deleteAuthor(SAuthor author){
+        this.authorRepository.deleteById(author.getId());
+    }
 }

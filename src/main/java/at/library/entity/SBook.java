@@ -12,7 +12,7 @@ public class SBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 /*    @NotNull*/
     /*@Size(max = 50)*/
     private String title;
@@ -51,7 +51,7 @@ public class SBook {
         this.language = language;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -28,13 +28,18 @@ public class BookApi {
         return this.bookController.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<SBook> getBook(@PathVariable int id) {
+    @GetMapping(path="/{id}")
+    public Optional<SBook> getBook(@PathVariable  int id) {
         return this.bookController.getBook(id);
     }
 
     @PutMapping
     public void updateBook(@RequestBody SBook book){
         this.bookController.updateBook(book);
+    }
+
+    @DeleteMapping
+    public void deleteBook(@RequestBody SBook book){
+        this.bookController.deleteBook(book);
     }
 }

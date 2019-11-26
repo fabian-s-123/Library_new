@@ -1,6 +1,5 @@
 package at.library.controller;
 
-import at.library.entity.SBook;
 import at.library.entity.SCustomer;
 import at.library.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +23,9 @@ public class CustomerController {
 
     public Optional<SCustomer> getCustomer(int id){
         return this.customerRepository.findById(id);
+    }
+
+    public void deleteCustomer(SCustomer customer){
+        this.customerRepository.deleteById(customer.getId());
     }
 }

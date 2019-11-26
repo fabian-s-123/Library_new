@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class SCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     @Size(max = 20)
     private String description;
 
@@ -21,7 +21,7 @@ public class SCategory {
         this.description = description;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
