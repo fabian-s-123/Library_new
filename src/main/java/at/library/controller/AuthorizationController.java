@@ -14,10 +14,10 @@ public class AuthorizationController {
     public SCustomer handleLogin(SCustomer customer){
         SCustomer currentCustomer = customerRepository.findById(customer.getId()).get();
         if (currentCustomer.getPinCode().equals(customer.getPinCode())) {
-            System.out.println("LOG IN SUCCESSFUL");
+            System.out.println("Log in successful");
             return currentCustomer;
         } else {
-            System.out.println("LOG IN FAILED");
+            System.out.println("Log in failed");
             return null;
         }
     }
