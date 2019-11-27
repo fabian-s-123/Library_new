@@ -14,8 +14,14 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public void createCategory(SCategory category){
-        this.categoryRepository.save(category);
+    public boolean createCategory(SCategory category){
+        if ((!(category.getDescription()==null))) {
+            this.categoryRepository.save(category);
+            System.out.println("Category successfully created");
+            return true;
+        }
+        System.out.println("Category could not be created");
+        return false;
     }
 
     public Iterable<SCategory> findAll(){

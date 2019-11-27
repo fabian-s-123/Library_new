@@ -4,6 +4,8 @@ import at.library.controller.AuthorController;
 import at.library.controller.BookController;
 import at.library.entity.SBook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -19,8 +21,12 @@ public class BookApi {
     private AuthorController authorController;
 
     @PostMapping
-    public void createBook(@RequestBody SBook book) {
-        this.bookController.createBook(book);
+    public ResponseEntity createBook(@RequestBody SBook book) {
+        boolean success = this.bookController.createBook(book);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity (HttpStatus.FORBIDDEN);
     }
 
     @GetMapping

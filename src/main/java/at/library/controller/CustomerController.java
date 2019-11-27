@@ -13,8 +13,26 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public void createCustomer(SCustomer customer){
-        this.customerRepository.save(customer);
+    public boolean createCustomer(SCustomer customer){
+        if ((!(customer.getPinCode()==null)) &&
+                (!(customer.getEmail()==null)) &&
+                (!(customer.getFirstName()==null)) &&
+                (!(customer.getLastName()==null)) &&
+                (!(customer.getBirthDay()==null)) &&
+                (!(customer.getStreet()==null)) &&
+                (!(customer.getApNr()==null)) &&
+                (customer.getZip()>0) &&
+                (!(customer.getCity()==null)) &&
+                (customer.getCreditCardNr()>0) &&
+                (customer.getCvc()>0) &&
+                (customer.getExpiryDateYear()>0) &&
+                (customer.getExpiryDateMonth()>0)){
+            this.customerRepository.save(customer);
+            System.out.println("Customer successfully created");
+            return true;
+        }
+        System.out.println("Customer could not be created");
+        return false;
     }
 
     public Iterable<SCustomer> findAll(){

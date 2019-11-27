@@ -27,9 +27,9 @@ public class SBook {
 /*    @Size(max = 50)*/
     private String publisher;
 /*    @Size(max = 4)*/
-    private String edition;
+    private int edition;
 /*    @Size(max = 4)*/
-    private String firstEdition;
+    private int firstEdition;
 /*    @Size(max = 4)*/
     private int pages;
 /*    @Size(max = 20)*/
@@ -38,7 +38,7 @@ public class SBook {
     public SBook(){
     }
 
-    public SBook(String title, int idAuthor, int categoryId, long isbn, int fsk, String publisher, String edition, String firstEdition, int pages, String language) {
+    public SBook(String title, int idAuthor, int categoryId, long isbn, int fsk, String publisher, int edition, int firstEdition, int pages, String language) {
         this.title = title;
         this.authorId = idAuthor;
         this.categoryId = categoryId;
@@ -103,19 +103,19 @@ public class SBook {
         this.publisher = publisher;
     }
 
-    public String getEdition() {
+    public int getEdition() {
         return edition;
     }
 
-    public void setEdition(String edition) {
+    public void setEdition(int edition) {
         this.edition = edition;
     }
 
-    public String getFirstEdition() {
+    public int getFirstEdition() {
         return firstEdition;
     }
 
-    public void setFirstEdition(String firstEdition) {
+    public void setFirstEdition(int firstEdition) {
         this.firstEdition = firstEdition;
     }
 

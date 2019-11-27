@@ -16,12 +16,12 @@ public class AuthorizationApi {
     private AuthorizationController authorizationController;
 
     @PostMapping
-    public ResponseEntity<SCustomer> login(@RequestBody SCustomer customer){
+    public ResponseEntity login(@RequestBody SCustomer customer){
         SCustomer sCustomer = this.authorizationController.handleLogin(customer);
-        if(sCustomer != null){
-            return new ResponseEntity<SCustomer>(sCustomer, HttpStatus.OK);
+        if (sCustomer != null){
+            return new ResponseEntity<>(sCustomer, HttpStatus.OK);
         }
-        //if customer have more than 3 tries
+        // if customer have more than 3 tries
         // return timeout
         return new ResponseEntity(HttpStatus.FORBIDDEN);
     }

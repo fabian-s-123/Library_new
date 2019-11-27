@@ -3,6 +3,8 @@ package at.library.api;
 import at.library.controller.CategoryController;
 import at.library.entity.SCategory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -16,8 +18,12 @@ public class CategoryApi {
     private CategoryController categoryController;
 
     @PostMapping
-    public void createCategory(@RequestBody SCategory category){
-        this.categoryController.createCategory(category);
+    public ResponseEntity createCategory(@RequestBody SCategory category){
+        boolean success = this.categoryController.createCategory(category);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity (HttpStatus.FORBIDDEN);
     }
 
     @GetMapping

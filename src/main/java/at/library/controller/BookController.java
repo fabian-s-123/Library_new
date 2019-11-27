@@ -15,8 +15,23 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-    public void createBook(SBook book){
-        this.bookRepository.save(book);
+    public boolean createBook(SBook book){
+        if ((!(book.getTitle()==null)) &&
+                (book.getAuthorId()>0) &&
+                (book.getCategoryId()>0) &&
+                (book.getIsbn()>0) &&
+                (book.getFsk()>0) &&
+                (!(book.getPublisher()==null)) &&
+                (book.getEdition()>0) &&
+                (book.getFirstEdition()>0) &&
+                (book.getPages()>0) &&
+                (!(book.getLanguage()==null))){
+            this.bookRepository.save(book);
+            System.out.println("Book successfully created");
+            return true;
+        }
+        System.out.println("Book could not be created");
+        return false;
     }
 
     public Iterable<SBook> findAll(){

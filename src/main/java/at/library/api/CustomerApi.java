@@ -3,6 +3,8 @@ package at.library.api;
 import at.library.controller.CustomerController;
 import at.library.entity.SCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -16,8 +18,12 @@ public class CustomerApi {
     private CustomerController customerController;
 
     @PostMapping
-    public void createCustomer(@RequestBody SCustomer customer) {
-        this.customerController.createCustomer(customer);
+    public ResponseEntity createCustomer(@RequestBody SCustomer customer) {
+        boolean success = this.customerController.createCustomer(customer);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity (HttpStatus.FORBIDDEN);
     }
 
     @GetMapping

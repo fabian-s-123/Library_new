@@ -13,8 +13,16 @@ public class AuthorController {
     @Autowired
     private AuthorRepository authorRepository;
 
-    public void createAuthor(SAuthor author){
-        this.authorRepository.save(author);
+    public boolean createAuthor(SAuthor author){
+        if ((!(author.getFirstName()==null)) &&
+                (!(author.getLastName()==null)) &&
+                (author.getBirthYear()>0)){
+            this.authorRepository.save(author);
+            System.out.println("Author successfully created");
+            return true;
+        }
+        System.out.println("Author could not be created");
+        return false;
     }
 
     public Iterable<SAuthor> findAll(){

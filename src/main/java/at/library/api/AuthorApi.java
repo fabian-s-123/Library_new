@@ -3,6 +3,8 @@ package at.library.api;
 import at.library.controller.AuthorController;
 import at.library.entity.SAuthor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -16,8 +18,12 @@ public class AuthorApi {
     private AuthorController authorController;
 
     @PostMapping
-    public void createAuthor(@RequestBody SAuthor author){
-        this.authorController.createAuthor(author);
+    public ResponseEntity createAuthor(@RequestBody SAuthor author){
+        boolean success = this.authorController.createAuthor(author);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity (HttpStatus.FORBIDDEN);
     }
 
     @GetMapping
