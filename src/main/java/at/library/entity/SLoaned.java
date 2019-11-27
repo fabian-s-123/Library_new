@@ -1,7 +1,6 @@
 package at.library.entity;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -14,7 +13,7 @@ public class SLoaned {
     private Integer idCustomer;
     private Integer idBook;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date laonedOn;
+    private Date loanedOn;
     @Temporal(TemporalType.TIMESTAMP)
     private Date returnedOn;
     private boolean extraTime;
@@ -22,10 +21,10 @@ public class SLoaned {
     public SLoaned () {
     }
 
-    public SLoaned(Integer idCustomer, Integer idBook, Timestamp laonedOn, Timestamp returnedOn, boolean extraTime) {
+    public SLoaned(Integer idCustomer, Integer idBook, Timestamp loanedOn, Timestamp returnedOn, boolean extraTime) {
         this.idCustomer = idCustomer;
         this.idBook = idBook;
-        this.laonedOn = laonedOn;
+        this.loanedOn = loanedOn;
         this.returnedOn = returnedOn;
         this.extraTime = extraTime;
     }
@@ -50,12 +49,12 @@ public class SLoaned {
         this.idBook = idBook;
     }
 
-    public Date getLaonedOn() {
-        return laonedOn;
+    public Date getLoanedOn() {
+        return loanedOn;
     }
 
-    public void setLaonedOn(Date laonedOn) {
-        this.laonedOn = laonedOn;
+    public void setLoanedOn(Date loanedOn) {
+        this.loanedOn = loanedOn;
     }
 
     public Date getReturnedOn() {

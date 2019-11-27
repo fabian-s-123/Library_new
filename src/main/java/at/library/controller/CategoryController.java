@@ -1,6 +1,5 @@
 package at.library.controller;
 
-import at.library.entity.SBook;
 import at.library.entity.SCategory;
 import at.library.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;

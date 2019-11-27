@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path="/api/login")
+@RequestMapping(path="/api/login/customer")
 public class AuthorizationApi {
 
     @Autowired
     private AuthorizationController authorizationController;
 
-    @PostMapping
+    @PostMapping(path)
     public ResponseEntity login(@RequestBody SCustomer customer){
         SCustomer sCustomer = this.authorizationController.handleLogin(customer);
         if (sCustomer != null){
@@ -25,4 +25,6 @@ public class AuthorizationApi {
         // return timeout
         return new ResponseEntity(HttpStatus.FORBIDDEN);
     }
+
+
 }

@@ -23,7 +23,7 @@ public class CustomerApi {
         if (success) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
-        return new ResponseEntity (HttpStatus.FORBIDDEN);
+        return new ResponseEntity(HttpStatus.FORBIDDEN);
     }
 
     @GetMapping
