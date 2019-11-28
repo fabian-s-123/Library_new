@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path="/api/login/admin")
+@RequestMapping(path="/api/admins")
 public class AdminApi {
 
     @Autowired

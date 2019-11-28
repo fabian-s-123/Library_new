@@ -1,0 +1,25 @@
+package at.library.controller;
+
+import at.library.entity.SAdmin;
+import at.library.repository.AdminRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+
+@Controller
+public class AuthorizationAdminController {
+
+    @Autowired
+    private AdminRepository adminRepository;
+
+    public SAdmin handleLoginAdmin(SAdmin admin){
+        SAdmin currentAdmin = adminRepository.findById(admin.getId()).get();
+        if (currentAdmin.getPinCode().equals(admin.getPinCode())) {
+            System.out.println("Log in successful");
+            return currentAdmin;
+        } else {
+            System.out.println("Log in failed");
+            return null;
+        }
+    }
+}
