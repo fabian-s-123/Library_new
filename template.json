@@ -35,14 +35,13 @@
 	"birthYear":1749
 }
 
-
-Gregs Tagebuch Band 3 Jetzt reicht's!
-11
-19
-9783833936340
-10
-2009
-2009
-Baumhaus
-218
-german
+{
+	"id":34,
+    "authorId":11,
+    "categoryId":19,
+	"isbn":9783868203813,
+	"fsk":10,
+	"edition":2017,
+	"firstEdition":1760,
+	"pages":170
+}

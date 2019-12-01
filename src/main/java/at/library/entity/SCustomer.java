@@ -13,7 +13,7 @@ public class SCustomer {
     private String email;
     private String firstName;
     private String lastName;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date birthDay;
     private String street;
     private String apNr;
